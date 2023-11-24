@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Flask App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <form action="/" method="POST">
+            <label for="text">Texto:</label>
+            <textarea name="text" id="text" rows="4" placeholder="Digite seu texto aqui"></textarea>
+            <button type="submit" name="action" value="insert">Inserir Texto</button>
+        </form>
+
+        <form action="/" method="POST">
+            <label for="text_select">Selecionar Texto:</label>
+            <select name="text_id" id="text_select">
+                {% for text in all_texts %}
+                    <option value="{{ text[0] }}">{{ text[1] }}</option>
+                {% endfor %}
+            </select>
+            <button type="submit" name="action" value="select">Selecionar Texto</button>
+        </form>
+
+        {% if selected_text %}
+            <div class="selected-text-box">
+                <h3>Texto Selecionado:</h3>
+                <p>{{ selected_text }}</p>
+            </div>
+        {% endif %}
+
+        <form action="/" method="POST">
+            <label for="text_edit">Editar Texto:</label>
+            <textarea name="text" id="text_edit" rows="4" placeholder="Edite o texto selecionado aqui"></textarea>
+            <input type="hidden" name="text_id" value="{{ text_id }}">
+            <button type="submit" name="action" value="edit">Editar Texto</button>
+        </form>
+    </div>
+</body>
+</html>
