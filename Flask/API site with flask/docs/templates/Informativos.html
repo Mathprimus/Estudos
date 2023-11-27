@@ -1,0 +1,116 @@
+    <!DOCTYPE html>
+    <html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link  rel="stylesheet" href="{{ url_for('static', filename='Informativos.css')}}"  >
+        <link rel="stylesheet" href="../static/Informativos.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css2?family=Abel&family=Bebas+Neue&display=swap" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css2?family=Abel&family=Bebas+Neue&family=Urbanist:wght@100&display=swap" rel="stylesheet">
+
+        <title>Informativos</title>
+    </head>
+    <body class="container">
+
+        <nav>
+            <div class="logo">
+                <img src="../static/logoAtletica.png" alt="Logo da Atlética de TI" width="100">
+            </div>
+
+            <!-- Adiciona o botão de menu -->
+            <button class="menu-btn" onclick="toggleMenu()">Menu</button>
+
+            <!-- Adiciona a lista de navegação -->
+            <div class="nav-list">
+                <a href="/Home">Inicio</a>
+                    <a href="/Cadastro">Cadastro</a>
+                    <a href="/Informativos">Infomativos</a>
+                    <a href="/db">Eventos</a>
+                    <a href="/Contatos">Contatos</a>
+                    <a href="/Loja">Loja</a>
+            </div>
+        </nav>
+
+        <header>
+            <h1>ÚLTIMOS INFORMATIVOS</h1>
+        </header>
+
+        <main>
+        <section class="informativos-container">
+            <article class="informativo">
+                <div class="imagem" style="background-image: url('../static/canecaTec.jpg');"></div>
+                <div class="informacoes">
+                    <h2>Nova coleção de canecas</h2>
+                    <p>Com designs modernos e materiais de alta qualidade, essas canecas são perfeitas para expressar sua paixão pela tecnologia.</p>
+                    <small>Data: 17/11/2023</small>
+                </div>
+            </article>
+
+            <article class="informativo">
+                <div class="imagem" style="background-image: url('../static/bolaVolei.jpg');"></div>
+                <div class="informacoes">
+                    <h2>Inscrições Abertas: Faça Parte do Time de Vôlei Feminino</h2>
+                    <p>Não perca a chance de fazer parte do time de vôlei feminino da Atlética! Estamos com inscrições abertas para atletas determinadas e apaixonadas pelo esporte. </p>
+                    <small>Data: 16/11/2023</small>
+                </div>
+            </article>
+
+            <article class="informativo">
+                <div class="imagem" style="background-image: url('../static/futebol.jpg');"></div>
+                <div class="informacoes">
+                    <h2>Triunfo nas Quadras: O Time de Futebol Masculino da Atlética de TI Conquista Mais uma Vitória!</h2>
+                    <p>Celebre a vitória triunfante do nosso time de futebol masculino da Atlética de TI! Com garra e habilidade, conquistamos mais uma vitória em campo. Parabéns a todos os jogadores por esse sucesso incrível! 🏆⚽️</p>
+                    <small>Data: 15/11/2023</small>
+                </div>
+            </article>
+
+            <article class="informativo">
+                <div class="imagem" style="background-image: url('../static/noteBrilhante.jpg');"></div>
+                <div class="informacoes">
+                    <h2>Evento de Integração Tecnológica:</h2>
+                    <p>Participe do nosso evento exclusivo, promovendo a integração entre estudantes de TI. Uma oportunidade única para networking e troca de conhecimentos.</p>
+                    <small>Data: 15/11/2023</small>
+                </div>
+            </article>
+
+            <article class="informativo">
+                <div class="imagem" style="background-image: url('../static/xadrez.avif');"></div>
+                <div class="informacoes">
+                    <h2>Destaque no Xadrez Universitário:</h2>
+                    <p>Parabenizamos nossos enxadristas que brilharam no torneio universitário regional. Com estratégia e inteligência, eles elevaram o nome da Atlética de TI no cenário acadêmico.</p>
+                    <small>Data: 15/11/2023</small>
+                </div>
+            </article>
+
+            <article class="informativo">
+                <div class="imagem" style="background-image: url('../static/gamer.jpg');"></div>
+                <div class="informacoes">
+                    <h2>Jornada Invicta no E-Sports:</h2>
+                    <p>Nossos gamers mostraram sua força nos campos virtuais! O time de e-sports da Atlética de TI segue invicto, destacando-se em competições online e consolidando nossa posição como referência no mundo digital.</p>
+                    <small>Data: 15/11/2023</small>
+                </div>
+            </article>
+
+        </section>
+
+    </main>
+
+        <footer>
+            <p>&copy; 2023 Atlética de TI. Todos os direitos reservados.</p>
+        </footer>
+
+        <script>
+            function toggleMenu() {
+                var navList = document.querySelector('.nav-list');
+                navList.classList.toggle('show');
+            }
+        </script>
+
+    </body>
+    </html>

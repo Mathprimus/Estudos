@@ -1,0 +1,96 @@
+    <!DOCTYPE html>
+    <html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link  rel="stylesheet" href="{{ url_for('static', filename='home_style.css')}}"  >
+        <link rel="stylesheet" href="../static/home_style.css">
+
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css2?family=Abel&family=Bebas+Neue&display=swap" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css2?family=Abel&family=Bebas+Neue&family=Urbanist:wght@100&display=swap" rel="stylesheet">
+
+        <title>Atlética de TI</title>
+
+    </head>
+    <body class="container">
+
+        <div class="cover">
+            <h1>ATLÉTICA  DE  TI</h1>
+            <h3>Seu site de eventos acadêmicos</h3>
+        </div>
+
+        <nav>
+            <div class="logo">
+                <img src="../static/logoAtletica.png" alt="Logo da Atlética de TI" width="100">
+            </div>
+
+            <!-- Adiciona o botão de menu -->
+            <button class="menu-btn" onclick="toggleMenu()">Menu</button>
+
+            <!-- Adiciona a lista de navegação -->
+            <div class="nav-list">
+                <a href="/Home">Inicio</a>
+                <a href="/Cadastro">Cadastro</a>
+                <a href="/Informativos">Infomativos</a>
+                <a href="/db">Eventos</a>
+                <a href="/Contatos">Contatos</a>
+                <a href="/Loja">Loja</a>
+            </div>
+        </nav>
+        <main>
+            <div class="card-container">
+                <div class="card">
+                    <h3>O epicentro dos eventos universitários!</h3>
+                    <p>Na atlética, buscamos criar experiências memoráveis e enriquecedoras na vida universitária,
+                        promovendo esportes, amizades e valores como fair play e respeito. Nosso objetivo é formar não
+                        apenas atletas, mas também líderes e cidadãos conscientes. Junte-se a nós nesta emocionante
+                        jornada.</p>
+                </div>
+                <div class="card">
+                    <h3>O que Fazemos?</h3>
+                    <p>Organizamos uma variedade de eventos que atendem a todos os gostos e interesses. Seja você um ávido
+                        entusiasta acadêmico, um amante da cultura, um festeiro nato
+                        ou simplesmente alguém que gosta de explorar novas ideias, temos algo para todos. Nossos eventos são
+                        projetados para promover a conexão, a aprendizagem e a diversão.</p>
+                </div>
+                <div class="card">
+                    <h3>Junte-se a Nós!</h3>
+                    <p>Se você deseja fazer parte de uma comunidade vibrante, participar de eventos emocionantes e criar
+                        memórias
+                        que durarão para sempre, está no lugar certo. Explore
+                        o nosso site para descobrir mais sobre os nossos eventos futuros, como se envolver e se tornar um
+                        membro
+                        ativo do nosso grupo.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="apertar">
+        <div class="texto">
+            <p>Fique conosco se cadastrando e nos acompanhando nessa jornada!</p>
+
+            <a href="/Cadastro">
+                <button class="botao">CADASTRE-SE</button>
+            </a>
+        </div>
+        </section>
+
+    </main>
+
+        <footer>
+            <p>&copy; 2023 Atlética de TI. Todos os direitos reservados.</p>
+        </footer>
+
+        <script>
+            function toggleMenu() {
+                var navList = document.querySelector('.nav-list');
+                navList.classList.toggle('show');
+            }
+        </script>
+    </body>
+    </html>

@@ -1,0 +1,83 @@
+    <!DOCTYPE html>
+    <html lang="pt-br">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link  rel="stylesheet" href="{{ url_for('static', filename='eventos style.css')}}"  >
+        <link rel="stylesheet" href="../static/eventos style.css">
+        <title>Eventos</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css2?family=Abel&family=Bebas+Neue&display=swap" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css2?family=Abel&family=Bebas+Neue&family=Urbanist:wght@100&display=swap" rel="stylesheet">
+
+    </head>
+
+    <body class="container">
+
+        <nav>
+            <div class="logo">
+                <img src="../static/logoAtletica.png" alt="Logo da Atlética de TI" width="100">
+            </div>
+
+            <button class="menu-btn" onclick="toggleMenu()">Menu</button>
+
+            <!-- Adiciona a lista de navegação -->
+            <div class="nav-list">
+                <a href="/Home">Inicio</a>
+                    <a href="/Cadastro">Cadastro</a>
+                    <a href="/Informativos">Infomativos</a>
+                    <a href="/Eventos">Eventos</a>
+                    <a href="/Contatos">Contatos</a>
+                    <a href="/Loja">Loja</a>
+            </div>
+        </nav>
+
+        <header>
+            <h1>EVENTOS</h1>
+        </header>
+    
+        <main>
+        <div class="eventos">
+            <div class="card">
+                <img src="../static/Choppada.webp" alt="Evento 1">
+                <div class="card-content">
+                    <h2>Choppada dos alunos</h2>
+                    <p>Data: 01/01/2023</p>
+                    <p>Local: Local 1</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="../static/mega.jpg" alt="Evento 2">
+                <div class="card-content">
+                    <h2>Mega Arena</h2>
+                    <p>Data: 02/01/2023</p>
+                    <p>Local: Local 2</p>
+                </div>
+            </div>
+
+            <!-- Adicione mais cards conforme necessário -->
+
+        </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2023 Atlética de TI. Todos os direitos reservados.</p>
+        </footer>
+
+        <script>
+            function toggleMenu() {
+                var navList = document.querySelector('.nav-list');
+                navList.classList.toggle('show');
+            }
+        </script>
+
+    </body>
+
+    </html>

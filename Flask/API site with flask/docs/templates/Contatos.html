@@ -1,0 +1,183 @@
+    <!DOCTYPE html>
+    <html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Contatos - Atlética de TI</title>
+        <link  rel="stylesheet" href="{{ url_for('static', filename='Cotatos.css')}}"  >
+        <link rel="stylesheet" href="../static/Cotatos.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css2?family=Abel&family=Bebas+Neue&display=swap" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css2?family=Abel&family=Bebas+Neue&family=Urbanist:wght@100&display=swap" rel="stylesheet">
+
+    </head>
+    <body class="container">
+
+        <nav>
+            <div class="logo">
+                <img src="../static/logoAtletica.png" alt="Logo da Atlética de TI" width="100">
+            </div>
+            <button class="menu-btn" onclick="toggleMenu()">Menu</button>
+            <div class="nav-list">
+                <a href="/Home">Inicio</a>
+                <a href="/Cadastro">Cadastro</a>
+                <a href="/Informativos">Infomativos</a>
+                <a href="/db">Eventos</a>
+                <a href="/Contatos">Contatos</a>
+                <a href="/Loja">Loja</a>
+            </div>
+        </nav>
+
+        <header>
+            <h1>Sobre</h1>
+        </header>
+
+        <main>
+            <section>
+                <section class="contatos">
+                    <h1>Contatos da Atlética:</h1>
+                    <p>Telefone: (19) 3261-4544</p>
+                    <p>Email: Atletica@Unimetrocamp.edu.br</p>
+                    <p class="contato-info"><a href="https://wa.me/1234567890"><img src="../static/wpp.png"></a> <a href="https://www.instagram.com/"><img src="../static/insta.png"></a></p>
+                </section>
+
+                <div>
+                    <h1>SOBRE:</h1>
+                    <p><b>Este projeto foi desenvolvido durante as aulas de Desenvolvimento Web,<br> ministrada pelo professor João Cunha, 
+                        onde foi realizado um site funcional para a <br> atlética recém formada de TI da faculdade Metrocamp da cidade de Campinas-SP.</b></p>
+                    </div>
+
+                <h1 class="contem">O SITE CONTÉM:</h1>
+                <div class="card">
+                    <img src="../static/lojaOn.png" alt="Descrição da Imagem 1">
+                    <div class="card-content">
+                        <p>Possui uma parte voltada a loja da Atlética com muitos produtos.<br></p>
+                    </div>
+                </div>
+                
+        
+                <div class="card">
+                    <img src="../static/autoFalante.png" alt="Descrição da Imagem 2">
+                    <div class="card-content">
+                        <p>Anúncios gerais e muitas notícias referente aos cursos de TI. </p>
+                    </div>
+                </div>
+        
+                <div class="card">
+                    <img src="../static/conversinha.png" alt="Descrição da Imagem 3">
+                    <div class="card-content">
+                        <p>Informativos de eventos que serão proporcionados.</p>
+                    </div>
+                </div>
+
+        <section class="participantes">
+            <!--
+            <h1>Participantes</h1>
+            <p><b>Sabrina Ribeiro</b></p>
+            <p><b>Felipe Orpheu</b></p>
+            <p><b>Matheus Rosa</b></p>
+            <p><b>Othavyo Henryk</b></p>
+            <p><b>Kathleen Gomes</b></p>
+            -->
+        <div class="box">
+                <h1>Textos Existentes:</h1>
+            <ul>
+                {% for row in textos %}
+                <li>
+                    {{ row[1] }}
+                    <form action="/editar_texto/{{ row[0] }}" method="get" style="display:inline;">
+                        <button type="submit">Editar</button>
+                    </form>
+                <form>
+
+
+                </form>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <br>
+        <div class="box">
+            {% if texto %}
+            <h1>Editar Texto:</h1>
+            <form action="/atualizar_texto/{{ texto[0] }}" method="post">
+                <label for="novo_texto">Novo Texto:</label>
+                <input type="text" id="novo_texto" name="novo_texto" value="{{ texto[1] }}" required>
+                <button type="submit">Atualizar</button>
+            </form>
+            {% endif %}
+        </div>
+        <br><br>
+        <div class="box">
+            {% for row in textos %}
+                <li>
+                    {{ row[1] }}
+                    <form action="/editar_texto/{{ row[0] }}" method="get" style="display:inline;">
+                        <button type="submit">Editar</button>
+                    </form>
+                <form>
+
+
+                </form>
+                </li>
+            {% endfor %}
+        </div>
+        <br><br>
+
+        <div class="box">
+        <h1>Cadastro</h1>
+
+   
+        <!-- Formulário para inserir texto -->
+        <form action="/inserir_texto" method="post">
+            <label for="texto">Digite seu texto:</label>
+            <input type="text" id="texto" name="texto" required>
+            <button type="submit">Inserir</button>
+        </form>
+    
+        <!-- Lista de textos existentes -->
+        {% for row in textos %}
+            <li>
+                {{ row[1] }}
+                <form action="/editar_texto/{{ row[0] }}" method="get" style="display:inline;">
+                   <button type="submit">Editar</button>
+                </form>
+                <form action="/excluir_texto/{{ row[0] }}" method="post" style="display:inline;">
+                    <button type="submit">Excluir</button>
+                </form>
+            </li>
+        {% endfor %}
+        </div>
+
+            <br><br>
+        <div class="box">
+            {% if texto %}
+                <h1>Editar Texto:</h1>
+                <form action="/atualizar_texto/{{ texto[0] }}" method="post">
+                    <label for="novo_texto">Novo Texto:</label>
+                    <input type="text" id="novo_texto" name="novo_texto" value="{{ texto[1] }}" required>
+                    <button type="submit">Atualizar</button>
+                </form>
+            {% endif %}
+        </div>
+    </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2023 Atlética de TI. Todos os direitos reservados.</p>
+        </footer>
+
+        <script>
+            function toggleMenu() {
+                var navList = document.querySelector('.nav-list');
+                navList.classList.toggle('show');
+            }
+        </script>
+    </body>
+    </html>

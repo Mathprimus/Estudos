@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,max-scale=1">
+    <title>Formulário de Cadastro</title>
+    <link  rel="stylesheet" href="{{ url_for('static', filename='Cadastro style.css')}}"  >
+    <link rel="stylesheet" href="../static/Cadastro style.css">
+</head>
+<body>
+    <nav class="botoes">
+        <ul>
+            <li><a href="/Home"><img src="../static/Button_voltar.png" height="40px" width="40px"></a></li>
+        </ul>
+    </nav>
+    <div class="box">
+        
+        <form name="Cadastro">
+            <fieldset>
+                <legend><b>Formulário de Cadastro</b></legend>
+                <br>
+                <div class="inputBox">
+                    <input type="text" name="nome" id="nome" class="inputUser" required>
+                    <label for="nome" class="labelInput">Nome Completo</label>
+                </div>
+                <br><br>
+                <div class="inputBox">
+                    <input type="text" name="email" id="email" class="inputUser" required>
+                    <label for="nome"  class="labelInput" >E-mail</label>
+                </div>
+                <br><br>
+                <div class="inputBox">
+                    <input type="text" name="celular" id="celular" class="inputUser" required >
+                    <label for="nome" class="labelInput">Celular</label>
+                </div> 
+                <br><br>
+                Curso:
+                    <select name="curso">
+                    <option value="0">Selecione seu curso:</option>
+                    <option value="1">Análise e Desenvolvimento de Sistemas</option>
+                    <option value="2">Sistemas da Informação</option>
+                    <option value="3">Ciêncica da Computação</option>
+                    <option value="4">Engenharia da Computação</option>
+                </select>
+                <br><br>
+                <p>Sexo:</p>
+                <input type="radio" id="feminino" name="genero" value="feminino" required>
+                <label for="feminino">Feminino</label>
+                <br>
+                <input type="radio" id="masculino" name="genero" value="masculino" required>
+                <label for="masculino">Masculino</label>
+                <br>
+                <input type="radio" id="outros" name="genero" value="outros" required>
+                <label for="outros">Outros</label>
+                <br>
+                <input type="radio" id="não_dizer" name="genero" value="não_dizer" required>
+                <label for="não_dizer">Prefiro não dizer</label>
+                <br><br>
+                <label for="data_nascimento"><b>Data de Nascimento</b></label>
+                <input type="date" name="data_nascimento" id="data_nascimento" required>
+                <br><br><br>
+
+                <div class="inputBox">
+                    <input type="text" name="CEP" id="CEP" class="inputUser" onchange="buscarCep(this.value)" required>
+                    <label for="CEP" class="labelInput"><b>CEP</b></label>
+                </div>
+                <br><br>
+                
+                <div class="inputBox">
+                    <input type="text" name="cidade" id="cidade" class="inputUser" required>
+                    <label for="cidade" class="labelInput"><b>Cidade</b></label>
+                </div>
+
+                <br><br>
+                
+                <div class="inputBox">
+                    <input type="text" name="bairro" id="bairro" class="inputUser" required>
+                    <label for="bairro" class="labelInput"><b>Bairro</b></label>
+                </div>
+
+                <br><br>
+
+                <div class="inputBox">
+                    <input type="text" name="endereco" id="endereco" class="inputUser" required>
+                    <label for="endereco" class="labelInput"><b>Endereço</b></label>
+                </div>
+               
+                <br><br>
+                Estado:
+                    <select name="estado">
+                    <option value="0">Selecione seu estado:</option>
+                    <option value="AC">Acre</option>
+                    <option value="AL">Alagoas</option>
+                    <option value="AP">Amapá</option>
+                    <option value="AM">Amazonas</option>
+                    <option value="BA">Bahia</option>
+                    <option value="CE">Ceará</option>
+                    <option value="DF">Distrito Federal</option>
+                    <option value="ES">Espírito Santo</option>
+                    <option value="GO">Goiás</option>
+                    <option value="MA">Maranhão</option>
+                    <option value="MT">Mato Grosso</option>
+                    <option value="MS">Mato Grosso do Sul</option>
+                    <option value="MG">Minas Gerais</option>
+                    <option value="PA">Pará</option>
+                    <option value="PB">Paraíba</option>
+                    <option value="PR">Paraná</option>
+                    <option value="PE">Pernambuco</option>
+                    <option value="PI">Piauí</option>
+                    <option value="RJ">Rio de Janeiro</option>
+                    <option value="RN">Rio Grande do Norte</option>
+                    <option value="RS">Rio Grande do Sul</option>
+                    <option value="RO">Rondônia</option>
+                    <option value="RR">Roraima</option>
+                    <option value="SC">Santa Catarina</option>
+                    <option value="SP">São Paulo</option>
+                    <option value="SE">Sergipe</option>
+                    <option value="TO">Tocantins</option></select>
+                <br><br><br>
+                <input type="submit" name="submit" id="submit">
+                <br><br>
+
+            </fieldset>
+        </form>
+        <script src="{{ url_for('static', filename='buscaCEP.js')}}" ></script>
+
+    </div>
+</body>
+</html>
