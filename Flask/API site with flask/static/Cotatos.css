@@ -1,0 +1,232 @@
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+
+    .container main {
+        flex: 1 1 0;
+        background-color: transparent;
+        border: 0;
+    }
+
+    body {
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        background-color: #000; /* Cor de fundo preta */
+        color: #fff; /* Cor do texto branca */
+        text-align: center;
+    }
+
+    nav {
+        background-color: #444;
+        padding: 10px;
+        box-sizing: border-box;
+        text-align: right;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 2;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    }
+
+    nav a {
+        color: #fff;
+        text-decoration: none;
+        margin: 0 15px;
+        margin-top: 10px;
+    }
+
+    .logo {
+        float: left;
+        margin: -1rem;
+        margin-left: 1rem;
+
+    }
+
+    .logo img {
+        width: 4rem;
+    }
+
+
+    .menu-btn {
+        display: none;
+        background-color: #444;
+        color: #fff;
+        border: none;
+        padding: 10px 15px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    .nav-list {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+
+    section {
+        max-width: 1200px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: green;
+        color: #000; /* Cor do texto dentro da seção */
+        border-radius: 8px;
+        box-shadow: 0 0 5px rgba(76, 175, 80, 1);
+    }
+
+    h1 {
+        margin-bottom: 25px;
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 2rem;
+    }
+
+    p {
+        font-family: 'Abel', sans-serif;
+        font-size: 20px;
+    }
+
+    .contato-info img {
+        width: 40px;
+    }
+
+    .contem {
+        margin-top: 2rem;
+    }
+
+    .card {
+        display: inline-block;
+        width: 30%;
+        margin: 0 1.5%;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        margin-bottom: 20px;
+    }
+
+    .card img {
+        width: 100%;
+        height: auto;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .card-content {
+        padding: 15px;
+    }
+
+    .card 
+
+    h2 {
+        margin-bottom: 10px;
+    }
+
+    .card {
+        width: 300px; /* Tamanho fixo para os cards */
+        max-height: 400px; /* Altura máxima para os cards */
+        overflow: hidden;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        margin: 0 auto 20px; /* Centraliza e adiciona margem na parte inferior */
+    }
+
+    .card img {
+        width: 100%;
+        height: auto;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .card-content {
+        padding: 15px;
+        overflow-y: auto; /* Adiciona scroll vertical se o conteúdo for maior */
+        max-height: 100%; /* Ajusta a altura máxima do conteúdo */
+    }
+
+
+
+    h2 {
+        margin-bottom: 10px;
+    }
+
+    .participantes {
+        background-color: white;
+        border-radius: 8px;
+    }
+
+    .contatos {
+        background-color: white;
+    }
+
+    @media (max-width: 600px) {
+        .box{
+            width: 20rem;
+        }
+        
+        .container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        .container main {
+            flex: 1 1 0;
+            background-color: transparent;
+            border: 0;
+        }
+
+        .nav-list {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            width: 100%;
+            background-color: #333;
+            z-index: 1;
+        }
+
+        .nav-list.show {
+            display: flex;
+        }
+
+        .nav-list a {
+            padding: 15px;
+            text-align: center;
+            width: 100%;
+            display: block;
+        }
+
+        .menu-btn {
+            display: block;
+        }
+
+        .card {
+            width: 100%;
+            margin: 0 0 20px 0;
+        }
+
+    }
+
+
+    footer {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+        width: 100%;
+        position: relative;
+        bottom: 0;
+        margin-top: 0;
+    }
+

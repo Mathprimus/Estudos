@@ -1,0 +1,185 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+li{
+    list-style-type: none;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container main {
+    flex: 1 1 0;
+    background-color: transparent;
+    border: 0;
+}
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #333;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Mantém a imagem fixa enquanto rola a página */
+}
+
+nav {
+    background-color: #444;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: right;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    margin-top: 10px;
+}
+
+.logo {
+    float: left;
+    margin: -1rem;
+    margin-left: 1rem;
+
+}
+
+.logo img {
+    width: 4rem;
+}
+
+/* Adiciona estilo ao botão de menu */
+.menu-btn {
+    display: none; /* Oculta o botão em telas maiores */
+    background-color: #444;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Adiciona estilo ao menu quando está oculto */
+.nav-list {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 100px;
+}
+
+.cadastro{
+    background-color: #12AF01;
+    color: black;
+    width: 50rem;
+    height: 15rem;
+    font-family: 'Dela Gothic One', cursive;
+    font-size: 20px;
+    border-radius: 15px;
+    box-shadow: 10px 10px 20px 3px rgb(167, 228, 179);
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    margin-top: 0;
+}
+
+/* Adicionando regras para dispositivos menores usando media queries */
+@media only screen and (max-width: 768px) {
+    .cadastro{
+        width: 300px;
+        height: 300px;
+    }
+
+    .nav-list {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        z-index: 1;
+    }
+
+    .nav-list a {
+        padding: 15px;
+        text-align: center;
+        width: 100%;
+        display: block;
+    }
+
+    .menu-btn {
+        display: block; /* Exibe o botão em telas menores */
+    }
+
+    /* Exibe o menu quando o botão é clicado */
+    .nav-list.show {
+        display: flex;
+    }
+
+    .card {
+        width: calc(50% - 40px); /* 2 cards por linha */
+    }
+
+    footer {
+        position: relative; /* Altera a posição do rodapé para ser relativo ao conteúdo */
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+    
+    .container main {
+        flex: 1 1 0;
+        background-color: transparent;
+        border: 0;
+    }
+
+    .card {
+        width: calc(100% - 40px); /* 1 card por linha */
+    }
+
+    footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    margin-top: 0;
+    }
+}
