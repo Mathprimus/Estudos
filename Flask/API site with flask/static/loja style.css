@@ -1,0 +1,208 @@
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+
+    .container main {
+        flex: 1 1 0;
+        background-color: transparent;
+        border: 0;
+    }
+
+
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: black;
+    }
+
+    nav {
+        background-color: #444;
+        padding: 10px;
+        box-sizing: border-box;
+        text-align: right;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 2;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    }
+
+    nav a {
+        color: #fff;
+        text-decoration: none;
+        margin: 0 15px;
+        margin-top: 10px;
+    }
+
+    .nav-list {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    .logo {
+        float: left;
+        margin: -1rem;
+        margin-left: 1rem;
+
+    }
+
+    .logo img {
+        width: 4rem;
+    }
+
+    header {
+        background-color: #12AF01;
+        color: black;
+        text-align: center;
+        padding: 1em;
+        margin-top: 3rem;
+    }
+
+    header h1 {
+        font-family: 'Dela Gothic One', cursive;
+    }
+
+    .menu-btn {
+        display: none; /* Oculta o botão em telas maiores */
+        background-color: #444;
+        color: #fff;
+        border: none;
+        padding: 10px 15px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    .main-content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding: 20px;
+    }
+
+    .produto {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 0px;
+        padding-bottom: 10px;
+        margin: 40px;
+        text-align: center;
+        width: 15%; /* Ajuste a largura conforme necessário */
+        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Adição da transição suave */
+    }
+
+    .produto h2 {
+        color: white;
+    }
+
+    .produto p {
+        color: white;
+    }
+
+    .produto button {
+        background-color: #4CAF50; /* Cor de fundo verde */
+        color: #fff;
+        border: none;
+        padding: 10px 15px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin-top: 10px;
+        cursor: pointer;
+    }
+
+    .produto button:hover {
+        background-color: #45a049; /* Cor de fundo verde mais escura no hover */
+    }
+
+    .produto:hover {
+        transform: scale(1.05); /* Aumenta um pouco o tamanho no hover */
+        box-shadow: 0 0 16px rgba(76, 175, 80, 1); /* Adição da sombra verde no hover */
+    }
+
+    .produto img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .preco{
+        display: block;
+        font-weight: bold;
+        color: #12AF01;
+        margin-top: 10px;
+    }
+
+    @media (max-width: 1140px) {
+        .produto {
+            width: 18rem;
+        }
+    }
+
+    /* Estilos adicionais para tornar os quadrados menores */
+    @media (max-width: 600px) {
+        .container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        .container main {
+            flex: 1 1 0;
+            background-color: transparent;
+            border: 0;
+        }
+
+        .produto {
+            width: 100%;
+        }
+
+        .nav-list {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            width: 100%;
+            background-color: #333;
+            z-index: 1;
+        }
+
+        .nav-list a {
+            padding: 15px;
+            text-align: center;
+            width: 100%;
+            display: block;
+        }
+
+        .menu-btn {
+            display: block; /* Exibe o botão em telas menores */
+        }
+
+        /* Exibe o menu quando o botão é clicado */
+        .nav-list.show {
+            display: flex;
+        }
+
+    }
+
+    footer {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+        width: 100%;
+        position: relative;
+        bottom: 0;
+        margin-top: 0;
+    }
